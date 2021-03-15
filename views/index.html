@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+  <title>My Weather App</title>
+  <link rel="stylesheet" href="/public/css/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <main>
+    <h1>My Weather App</h1>
+    <div class="tab">
+      <button class="tablinks" onclick="" data-tab="single">Single City</button>
+      <button class="tablinks" onclick="" data-tab="multiple">Multiple Cities</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="single" class="tabcontent">
+      <!-- <h3>Single City</h3> -->
+      <form action="/my-weather-app/single-search" method="POST" id="city-form">
+        <label for="city">Enter City name:</label><br>
+        <input type="text" id="city" name="city" value="" placeholder="e.g. New York City" required><br>
+        <input type="submit" value="Submit" class="btn">
+      </form>
+      <br>
+      <div id="single-results"></div>
+    </div>
+
+    <div id="multiple" class="tabcontent">
+      <!-- <h3>Multiple Cities</h3> -->
+      <form action="/my-weather-app/multiple-search" method="POST" id="cities-form">
+        <label for="cities">Choose cites:</label><br>
+        <select name="cities" id="cities" multiple>
+          <option value="london">London</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="new york city">New York City</option>
+          <option value="california">California</option>
+          <option value="delhi">Delhi</option>
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="barcelona">Barcelona</option>
+          <option value="moscow">Moscow</option>
+          <option value="dubai">Dubai</option>
+        </select>
+        <br><br>
+        <input type="submit" class="btn" value="Submit">
+      </form>
+      <br>
+      <div id="multiple-results"></div>
+    </div>
+  </main>
+</body>
+
+<script src="/public/js/custom.js"></script>
+</html>
